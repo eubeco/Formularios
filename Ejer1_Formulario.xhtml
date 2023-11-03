@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   lang="es" xml:lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+  <title>Formularios - Ejercicio 1 - Validación de controles en formulario.</title>
+  <script type="text/javascript" src="js/Ejer1_Formulario.js"></script>
+</head>
+<body>
+  <form id="formulario" action="/action_page.php">
+    <label class="lbl_caja" for="nombre">Nombre:</label>
+    <input type="text" class="caja" id="nombre" name="nombre"/><br/>
+
+    <label class="lbl_caja" for="apellidos">Apellidos:</label>
+    <input type="text" class="caja" id="apellidos" name="apellidos" /><br/>
+
+    <label class="lbl_caja" for="telefono">Teléfono:</label>
+    <input type="text" class="caja" id="telefono" name="telefono" /><br/>
+
+    <label class="lbl_caja" for="dni">DNI:</label>
+    <input type="text" class="caja" id="dni" name="dni" /><br/>
+
+    <label class="lbl_caja" for="edad">Edad:</label>
+    <input type="text" class="caja" id="edad" name="edad" /><br/>
+
+    <label >Sexo:</label><br/>
+    <input type="radio" id="hombre" name="sexo" checked ="checked"/>
+    <label for="hombre">Hombre</label><br/>
+    <input type="radio" id="mujer" name="sexo" />
+    <label for="mujer">Mujer</label><br/>
+
+    <label for="foto">Incluir mi foto:</label>
+    <input type="text" id="foto" name="foto"/>
+    <input type="button" id="btn_foto" name="btn_foto" value="Examinar" onclick="cargarImagen()"/><br/>
+
+    <label for="publicidad">Enviar publicidad</label>
+    <input type ="checkbox" name ="publicidad" id="publicidad"  value ="si" checked ="checked" /><br/>
+
+    <label for="aficiones">Elige tu afición favorita:</label>
+    <select name ="aficiones" id="aficiones" onchange="mostrarAlert()">
+      <option value ="1"  selected ="selected">Música</option >
+      <option value ="2">Lectura</option >
+      <option value ="3">Deporte</option >
+    </select><br/>
+
+    <label for="observaciones">Observaciones:</label><br/>
+    <textarea id="observaciones" name="observaciones" rows="5" cols="50" onkeypress="return limita(150)"/><br/>
+
+    <input type="button" id="btn_guardar" name="btn_guardar" value="Guardar cambios" onclick="guardarCambios()"/>
+    <input type="button" id="btn_borrar" name="btn_borrar" value="Borrar los datos introducidos" onclick="borrarDatosIntroducidos()"/><br/><br/>
+  </form>
+</body>
+</html>
